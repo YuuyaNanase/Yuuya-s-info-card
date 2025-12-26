@@ -168,3 +168,22 @@ footer a:hover {
     font-size: 1.1rem;
   }
 }
+
+/* Back button */
+header .back-button {
+  background: none;
+  border: none;
+  color: var(--accent-blue-light); /* Light blue color */
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none; /* Remove underline */
+  transition: none; /* No transition effect */
+}
+
+header .back-button:hover,
+header .back-button:focus {
+  color: var(--accent-blue-light); /* Keep the light blue on hover and focus */
+  background: none;
+  outline: none;
+  text-decoration: none; /* No underline on hover/focus */
+}
