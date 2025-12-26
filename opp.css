@@ -1,0 +1,277 @@
+:root {
+  --bg-main: #0a0d14;
+  --card-bg: #1a1f2e;
+  --accent: #4da6ff;
+  --accent-light: #78b0ff;
+  --text-main: #d1d9e6;
+  --text-muted: #8a95ad;
+  --shadow: rgba(0, 0, 0, 0.6);
+  --radius: 15px;
+  --transition: 0.25s ease;
+}
+
+/* =====================
+   Reset & Base
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =====================
+   Header
+===================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 14px 24px;
+  background: var(--bg-main);
+  box-shadow: 0 4px 10px var(--shadow);
+  z-index: 1000;
+}
+
+.logo i {
+  color: var(--accent);
+  margin-right: 8px;
+}
+
+/* =====================
+   Main Layout
+===================== */
+main {
+  padding: 110px 30px 50px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1300px;
+  width: 100%;
+}
+
+/* =====================
+   Cards
+===================== */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 25px;
+  box-shadow: 0 10px 25px var(--shadow);
+  transition: transform var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* =====================
+   Profile Picture
+===================== */
+.profile-pic-card {
+  text-align: center;
+}
+
+.avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid var(--accent);
+  margin-bottom: 15px;
+  transition: transform var(--transition);
+}
+
+.avatar:hover {
+  transform: scale(1.06);
+}
+
+.username {
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.status {
+  color: var(--text-muted);
+  margin-top: 5px;
+}
+
+/* =====================
+   My Profile (Neat Layout)
+===================== */
+.profile-details {
+  list-style: none;
+  margin-top: 12px;
+  background: rgba(77, 166, 255, 0.06);
+  border-radius: 12px;
+  padding: 10px 15px;
+}
+
+.profile-details li {
+  display: grid;
+  grid-template-columns: 26px 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 5px;
+  border-bottom: 1px solid rgba(77, 166, 255, 0.15);
+  font-size: 0.95rem;
+}
+
+.profile-details li:last-child {
+  border-bottom: none;
+}
+
+.profile-details li i {
+  color: var(--accent);
+  text-align: center;
+  font-size: 1rem;
+}
+
+.profile-details li span {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.profile-details li strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* =====================
+   Lists & Interests
+===================== */
+.profile-interests-list,
+.love-list {
+  background: rgba(77, 166, 255, 0.06);
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.profile-interests-list ul,
+.love-list {
+  list-style: none;
+}
+
+.profile-interests-list a {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  gap: 10px;
+}
+
+.profile-interests-list a:hover {
+  color: var(--accent);
+}
+
+/* =====================
+   Love Items
+===================== */
+.love-list li {
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  transition: background var(--transition);
+}
+
+.love-list li:hover {
+  background: var(--accent);
+  color: var(--card-bg);
+}
+
+/* =====================
+   Social Links
+===================== */
+.social-icons {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(77, 166, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 1.5rem;
+  transition: transform var(--transition), background var(--transition);
+}
+
+.social-icons a:hover {
+  transform: scale(1.15);
+  background: var(--accent-light);
+  color: var(--card-bg);
+}
+
+/* =====================
+   Footer
+===================== */
+.footer {
+  text-align: center;
+  padding: 18px;
+  color: var(--text-muted);
+}
+
+/* Footer link – static, no effects */
+.footer a {
+  color: var(--accent-light);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer a:hover,
+.footer a:focus,
+.footer a:active {
+  color: var(--accent-light);
+  text-decoration: none;
+  outline: none;
+}
+
+/* =====================
+   Accessibility
+===================== */
+a:focus {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 3px;
+}
+
+/* =====================
+   Responsive
+===================== */
+@media (max-width: 1000px) {
+  .profile-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  main {
+    padding: 100px 20px 40px;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .avatar {
+    width: 140px;
+    height: 140px;
+  }
+}
